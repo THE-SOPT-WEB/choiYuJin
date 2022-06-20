@@ -53,15 +53,17 @@ function LetterCards() {
             </WriterInfo>
             <p>{letter.content}</p>
           </LetterText>
-          <EditButton onClick={handleClick}>내맘대로 수정하기</EditButton>
+          <EditButton onClick={() => handleClick(letter)}>
+            내맘대로 수정하기
+          </EditButton>
         </>
       )}
     </li>
   ));
 
   const navigate = useNavigate();
-  function handleClick() {
-    navigate("/edit", { state: selectedLetter });
+  function handleClick(letter) {
+    navigate("/edit", { state: letter });
   }
 
   //선택된 편지 정보 저장해서 모달에 보여주기 & 아이디 저장.
