@@ -5,7 +5,6 @@ import {
   EditButton,
   PasswordModal,
   ButtonContainer,
-  LetterText,
 } from "./style";
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -44,7 +43,7 @@ function LetterCards() {
         "🔐"
       ) : (
         <>
-          <LetterText>
+          <div>
             <WriterInfo>
               <span>From. {letter.name}</span>
               {letter.images.map((url) => (
@@ -52,7 +51,7 @@ function LetterCards() {
               ))}
             </WriterInfo>
             <p>{letter.content}</p>
-          </LetterText>
+          </div>
           <EditButton onClick={() => handleClick(letter)}>
             내맘대로 수정하기
           </EditButton>
